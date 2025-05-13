@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RN Enterprises | Premium Plywood & Beet Manufacturer | Since 2005</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #121212;       /* Dark background */
+            --secondary: #FFD700;     /* Gold/Yellow */
+            --accent: #FFC000;        /* Slightly darker gold */
+            --light: #1E1E1E;         /* Slightly lighter black */
+            --dark: #FFFFFF;          /* White text */
+            --text: #CCCCCC;         /* Light gray text */
+            --border: #333333;       /* Dark border */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* Header - Fixed */
+        header {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid var(--secondary);
+            transition: all 0.3s;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            display: block;
+            color: var(--text);
+            font-weight: 400;
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section - Fixed Margin */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            color: white;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(255, 215, 0, 0.3) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin-top: -50px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--secondary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--text);
+        }
+
+        .highlight-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.7rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: transparent;
+            color: #25D366;
+            border-color: #25D366;
+        }
+
+        .btn i {
+            margin-right: 0.5rem;
+        }
+
+        /* Features Banner - Vertical Layout */
+        .features-banner {
+            background: var(--light);
+            color: var(--dark);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            z-index: 999;
+        }
+
+        .features-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 300px;
+            padding: 1rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .feature-icon {
+            background: var(--secondary);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            text-align: left;
+        }
+
+        .feature-text strong {
+            display: block;
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        .feature-text span {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 20%;
+        }
+
+        .section-subtitle {
+            color: var(--text);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        .about-features {
+            margin: 2rem 0;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-feature i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            height: 500px;
+            border: 2px solid var(--secondary);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .gst-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: var(--primary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border-color: var(--secondary);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.8rem;
+        }
+
+        .product-info h3 {
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .product-info p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .product-features {
+            margin-top: 1.5rem;
+        }
+
+        .product-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .product-feature i {
+            color: var(--accent);
+            margin-right: 0.7rem;
+            font-size: 1.1rem;
+        }
+
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .price-tag {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        /* Price Tables */
+        .pricing {
+            padding: 6rem 0;
+            background: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 2rem;
+            background: var(--light);
+            border: 1px solid var(--secondary);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--text);
+        }
+
+        .tab-btn.active {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: var(--secondary);
+            color: var(--primary);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        tr:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .table-title {
+            background: var(--light);
+            color: var(--secondary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 1.2rem;
+            border-radius: 10px 10px 0 0;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .note {
+            text-align: center;
+            font-style: italic;
+            color: var(--text);
+            margin-top: 1.5rem;
+            opacity: 0.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--primary);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            color: rgba(255, 215, 0, 0.2);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--text);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+            border: 2px solid var(--secondary);
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--secondary);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 0;
+            background: var(--primary);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--light);
+        }
+
+        .faq-question {
+            background: var(--light);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            color: var(--dark);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+            color: var(--secondary);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: var(--text);
+        }
+
+        .faq-item.active .faq-question {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-question i {
+            color: var(--primary);
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
+            color: var(--dark);
+            border-top: 3px solid var(--secondary);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-info h3:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail i {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-text p {
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--secondary);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            color: var(--text);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--secondary);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: white;
+            padding: 4rem 0 2rem;
+            border-top: 3px solid var(--secondary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            opacity: 0.8;
+        }
+
+        .footer-contact i {
+            margin-right: 0.8rem;
+            color: var(--secondary);
+            margin-top: 0.3rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            height: 200px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 6rem 0;
+            background: var(--primary);
+        }
+
+        .certifications-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .certification-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 200px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .certification-img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .certification-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .certification-title {
+            font-weight: 600;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-image {
+                height: 400px;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .features-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .feature-item {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+
+            .hero-content {
+                margin-top: 0;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919300780406" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#header" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://i.ibb.co/TMsZsfLK/Whats-App-Image-2025-05-12-at-15-50-43.jpg" alt="RN Enterprises Card">
+                    RN Enterprises
+                    <span>Since 2005</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#pricing">Price List</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="highlight-badge">24/7 Customer Support</div>
+                <h1>Premium Plywood & Beet Manufacturer</h1>
+                <p>Manufacturing high-quality plywood and moulding beet products in Jabalpur since 2005 with unmatched quality and service</p>
+                <div class="btn-group">
+                    <a href="#pricing" class="btn"><i class="fas fa-rupee-sign"></i> View Price List</a>
+                    <a href="https://wa.me/919300780406" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Banner - Vertical Layout -->
+    <section class="features-banner">
+        <div class="container">
+            <div class="features-container">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="feature-text">
+                        <strong>Premium Quality</strong>
+                        <span>ISI Certified Products</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="feature-text">
+                        <strong>All-India Delivery</strong>
+                        <span>Fast & Reliable Shipping</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="feature-text">
+                        <strong>24/7 Support</strong>
+                        <span>Always Available</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <strong>Since 2005</strong>
+                        <span>18+ Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About RN Enterprises</h2>
+                <p class="section-subtitle">Trusted manufacturers of premium plywood and beet products in Jabalpur</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story Since 2005</h3>
+                    <p>RN Enterprises was founded in 2005 with a vision to provide high-quality plywood and beet products to customers across India. Over the years, we've built a reputation for excellence in manufacturing and customer service.</p>
+                    <p>Located at ganga sagar road , Shukla Nanar Garha Road, Jabalpur, we've been serving builders, contractors, and individual customers with premium products that stand the test of time.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Quality Assurance</h4>
+                                <p>All our products undergo strict quality checks to ensure durability and performance</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Customer Focus</h4>
+                                <p>We prioritize customer satisfaction with personalized service and support</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <h4>Modern Manufacturing</h4>
+                                <p>State-of-the-art facilities for consistent product quality</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gst-badge">
+                        <i class="fas fa-file-invoice"></i>
+                        GSTIN: 23ALUPP3050C1Z9
+                    </div>
+                </div>
+                <div class="about-image">
+                   <img src="https://i.ibb.co/YFXPLKqS/Whats-App-Image-2025-05-12-at-16-03-03-1.jpg" alt="RN Enterprises Card ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Products</h2>
+                <p class="section-subtitle">Premium quality plywood and beet products for all your needs</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://i.ibb.co/WvQJbPGT/Whats-App-Image-2025-05-12-at-16-17-17.jpg" alt="ZedStone Hardwood Plywood">
+                    </div>
+                    <div class="product-info">
+                        <h3>ZedStone ply </h3>
+                        <p>Premium quality plywood with 100% zedstone ply for superior strength and durability</p>
+                        <div class="product-features">
+                            <div class="product-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Termite Resistant</span>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Warp Resistant</span>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Moisture Proof</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-tag">Starting at lowest price </span>
+                            <a href="#contact" class="btn">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://i.ibb.co/kPz6X1d/Whats-App-Image-2025-05-12-at-15-56-28.jpg" alt="Groove Ply Board Door">
+                    </div>
+                    <div class="product-info">
+                        <h3>Groove Ply Board Door</h3>
+                        <p>High-quality ply board doors with excellent finish and durability for modern homes</p>
+                        <div class="product-features">
+                            <div class="product-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Smooth Finish</span>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Strong Core</span>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Custom Sizes Available</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-tag">Starting at ₹1,500</span>
+                            <a href="#contact" class="btn">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://i.ibb.co/jkV0STFQ/Screenshot-2025-05-12-at-15-44-12-Shuttering-Plywood-Shuttering-Ply-Latest-Price-Manufacturers-Suppl.png" alt="shuttering ply ">
+                    </div>
+                    <div class="product-info">
+                        <h3>shuttering Plywood</h3>
+                        <p>Premium plywood board & door solutions with cove gap design for perfect fitting</p>
+                        <div class="product-features">
+                            <div class="product-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Cove Gap Design</span>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Termite Resistant</span>
+                            </div>
+                            <div class="product-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Warp Proof</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-tag">Starting at ₹1,200</span>
+                            <a href="#contact" class="btn">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Gallery</h2>
+                <p class="section-subtitle">See our premium products and manufacturing process</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/Kcf8DsjR/mica-wood-paper-6-mm-alstone-h-20240809182004267.jpg" alt="Manufacturing Facility">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/G3FMqQ6N/Boiserie-Plant-On-Mouldings-The-Wall-Panelling-Company-scaled-1.webp"  alt="Plywood Stack">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/GQNCZSRG/images.jpg" alt="Finished Products">
+                </div>
+                <div class="gallery-item">
+                  <img src="https://i.ibb.co/chwk43Hx/Gypsum-Board-Screw-1280x720.jpg" alt="Quality Inspection">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/kPz6X1d/Whats-App-Image-2025-05-12-at-15-56-28.jpg" alt="Product Showcase">
+                </div>
+                <div class="gallery-item">
+                   <img src="https://i.ibb.co/j9PzN55K/image-0901-500x500.webp" alt="Custom Solutions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Certifications</h2>
+                <p class="section-subtitle">Quality standards we adhere to</p>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <div class="certification-img">
+                        <img src="https://i.ibb.co/LzFws2ns/ISO-certification-scaled.webp"  alt="ISI Certification">
+                    </div>
+                    <div class="certification-title">ISI Certified</div>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-img">
+                        <img src="https://i.ibb.co/PGkBLSsr/eco-friendly-logo-png-seeklogo-209660.png" alt="FSC Certification">
+                    </div>
+                    <div class="certification-title">ECO FRIENDLY </div>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-img">
+                        <img src="https://i.ibb.co/wrPGNrjp/images.png" alt="termite proof ">
+                    </div>
+                    <div class="certification-title">TERMITE PROOF</div>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-img">
+                      <img src="https://i.ibb.co/Kcc359Bv/depositphotos-149916256-stock-illustration-waterproof-round-grunge-black-stamp.webp" alt=" 100% waterproof ply ">
+                    </div>
+                    <div class="certification-title">100% WATERPROOF PLY </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Tables Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Moulding & Plain Beet Price List</h2>
+                <p class="section-subtitle">Competitive prices for premium quality products</p>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab('moulding')">Moulding Beet</button>
+                <button class="tab-btn" onclick="openTab('plain')">Plain Beet</button>
+                <button class="tab-btn" onclick="openTab('embose')">Embose Beet</button>
+            </div>
+            
+            <!-- Moulding Beet Table -->
+            <div id="moulding" class="tab-content" style="display: block;">
+                <div class="table-container">
+                    <div class="table-title">MOULDING BEET PRICE LIST</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S.N</th>
+                                <th>ITEM</th>
+                                <th>II</th>
+                                <th>I</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1 1/2 X 1/2 (CR)</td>
+                                <td>1.60</td>
+                                <td>3.50</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>3/4 X 1/2 (CR)</td>
+                                <td>1.95</td>
+                                <td>4.50</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>3/4 X 3/4 (CR)</td>
+                                <td>2.65</td>
+                                <td>5.75</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>3/4 X 1 (HR)</td>
+                                <td>2.80</td>
+                                <td>5.85</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>3X10 (HR)</td>
+                                <td>2.60</td>
+                                <td>5.85</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>2X10 (HR)</td>
+                                <td>2.65</td>
+                                <td>5.85</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>45 X 10 (HR)</td>
+                                <td>---</td>
+                                <td>12.50</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>45 X 10 (CR)</td>
+                                <td>---</td>
+                                <td>13.50</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>1X1 / 2X 3/4 (CR)</td>
+                                <td>5.50</td>
+                                <td>13.50</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>22 X 6 (HR)</td>
+                                <td>1.75</td>
+                                <td>3.75</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>4 LINE</td>
+                                <td>2.55</td>
+                                <td>5.00</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>6 LINE</td>
+                                <td>2.65</td>
+                                <td>5.50</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>1/2 (HR)</td>
+                                <td>---</td>
+                                <td>3.00</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>22X10HR ARRO</td>
+                                <td>5.5</td>
+                                <td>6.5</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>35X10HR ARRO</td>
+                                <td>7.5</td>
+                                <td>9.5</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>3/4X3/4 ARRO</td>
+                                <td>5.75</td>
+                                <td>6.5</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>1/2X1/2 ARRO</td>
+                                <td>3.75</td>
+                                <td>4.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Plain Beet Table -->
+            <div id="plain" class="tab-content" style="display: none;">
+                <div class="table-container">
+                    <div class="table-title">PLAIN BEET PRICE LIST</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S.N</th>
+                                <th>ITEM</th>
+                                <th>II</th>
+                                <th>I</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>22X6 (P)</td>
+                                <td>1.45</td>
+                                <td>3.50</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>35X6 (P)</td>
+                                <td>2.25</td>
+                                <td>5.50</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>45X6 (P)</td>
+                                <td>3.00</td>
+                                <td>7.00</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>22X10 (P)</td>
+                                <td>2.25</td>
+                                <td>5.85</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>35X10 (P)</td>
+                                <td>3.60</td>
+                                <td>8.00</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>45X10 (P)</td>
+                                <td>4.75</td>
+                                <td>12.50</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>1X1 (P)</td>
+                                <td>5.75</td>
+                                <td>---</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>1X1/2X1 (P)</td>
+                                <td>---</td>
+                                <td>---</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>2X1 (P)</td>
+                                <td>---</td>
+                                <td>13.50</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>1X1/2X1 (P)</td>
+                                <td>---</td>
+                                <td>6.50</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>(PIANE)</td>
+                                <td>---</td>
+                                <td>---</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>1X3/4 (P)</td>
+                                <td>3.75</td>
+                                <td>---</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>1X1/2X3/4</td>
+                                <td>5.50</td>
+                                <td>---</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Embose Beet Table -->
+            <div id="embose" class="tab-content" style="display: none;">
+                <div class="table-container">
+                    <div class="table-title">EMBOSE BEET PRICE LIST</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S.N</th>
+                                <th>ITEM</th>
+                                <th>RATE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>14</td>
+                                <td>22X4</td>
+                                <td>2.00</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>35X4</td>
+                                <td>4.50</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>45X4</td>
+                                <td>6.50</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>12X4</td>
+                                <td>1.50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <p class="note">Prices are in INR per square foot. Subject to change without prior notice.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Trusted by builders and contractors across India</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>RN Enterprises has been our reliable plywood supplier for over 5 years. Their products are consistently high quality and their service is exceptional.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajesh Sharma</h4>
+                            <p>Sharma Constructions, Jabalpur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The moulding beet from RN Enterprises is superior to anything else we've used. Perfect for our furniture manufacturing needs.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Patel</h4>
+                            <p>Patel Furniture, Bhopal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>We appreciate their 24/7 availability and quick delivery. Their products have never let us down in our projects.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Vikram Singh</h4>
+                            <p>Singh Builders, Indore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about our products</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What makes your plywood different from others?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our plywood is made from 100% Gurjan hardwood face with ISI certified manufacturing processes. We use premium adhesives that make our products termite-proof, warp-resistant and moisture-proof, ensuring longer lifespan.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do you offer bulk discounts?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer special pricing for bulk orders. The discount percentage depends on the order quantity and product type. Please contact our sales team for a customized quote.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What are your delivery timelines?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For orders within Jabalpur, we deliver within 24-48 hours. For other locations in Madhya Pradesh, delivery takes 3-5 days. Pan-India deliveries typically take 5-7 working days depending on the destination.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I get custom sizes for moulding beet?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in custom-sized moulding beet for specific project requirements. Minimum order quantities apply for custom sizes. Share your requirements with our team for a quote.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How do I place an order?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can place orders through WhatsApp (9300780406), by calling us, or by filling out the contact form on this website. Our team will confirm your order and provide payment details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Get in touch for orders or inquiries</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Business Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-building"></i>
+                            <div class="contact-text">
+                                <h4>RN Enterprises</h4>
+                                <p>C/O S.R Timber B.T Compound, Shukla Nanar Garha Road, Jabalpur (M.P)</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-user"></i>
+                            <div class="contact-text">
+                                <h4>Proprietor</h4>
+                                <p>Narendra Purohit</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-text">
+                                <h4>Phone Numbers</h4>
+                                <p>9300780406, 9425157668</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-user"></i>
+                            <div class="contact-text">
+                                <h4>Manager</h4>
+                                <p>Ritesh Purohit (7247020935)</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-file-invoice"></i>
+                            <div class="contact-text">
+                                <h4>                <p>23ALUPP3050C1Z9</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">Business Hours</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-text">
+                            <h4>Open 24/7</h4>
+                            <p>For orders and support</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem;">
+                        <a href="https://wa.me/919300780406" class="btn btn-whatsapp" style="display: inline-flex; align-items: center;">
+                            <i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="inquiryForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Product Interest</label>
+                            <select id="product" name="product" required>
+                                <option value="">Select a product</option>
+                                <option value="plywood">Plywood</option>
+                                <option value="moulding">Moulding Beet</option>
+                                <option value="plain">Plain Beet</option>
+                                <option value="embose">Embose Beet</option>
+                                <option value="doors">Doors</option>
+                                <option value="hardware">Hardware</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message/Requirements</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                       <img src="https://i.ibb.co/TMsZsfLK/Whats-App-Image-2025-05-12-at-15-50-43.jpg" alt="RN Enterprises Logo">
+                        RN Enterprises
+                    </div>
+                    <p>Manufacturers of premium plywood and beet products since 2005. Serving customers across India with quality materials and exceptional service.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#pricing">Price List</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Commercial Plywood</a></li>
+                        <li><a href="#">MR Grade Plywood</a></li>
+                        <li><a href="#">Moulding Beet</a></li>
+                        <li><a href="#">Plain Beet</a></li>
+                        <li><a href="#">Embose Beet</a></li>
+                        <li><a href="#">Doors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> C/O S.R Timber B.T Compound, Shukla Nanar Garha Road, Jabalpur (M.P)</p>
+                    <p><i class="fas fa-phone"></i> 9300780406, 9425157668</p>
+                    <p><i class="fas fa-user"></i> Ritesh Purohit: 7247020935</p>
+                    <p><i class="fas fa-file-invoice"></i> GSTIN: 23ALUPP3050C1Z9</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2005-2023 RN Enterprises. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        function openTab(tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = 'none';
+            }
+            
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+            }
+            
+            document.getElementById(tabName).style.display = 'block';
+            event.currentTarget.className += ' active';
+        }
+        
+        // FAQ toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+        
+        // Form submission
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you shortly.');
+            this.reset();
+        });
+        
+        // Sticky header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            if (window.scrollY > 100) {
+                header.style.padding = '0.8rem 0';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
+            } else {
+                header.style.padding = '1.2rem 0';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            }
+            
+            // Show back to top button
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
